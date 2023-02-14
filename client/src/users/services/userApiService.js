@@ -22,7 +22,7 @@ export const signup = async (normalizedUser) => {
 
 export const editUser = async (userId, normalaizedCard) => {
   try {
-    const { data } = await axios.post(
+    const { data } = await axios.put(
       `${apiUrl}/users/${userId}`,
       normalaizedCard
     );

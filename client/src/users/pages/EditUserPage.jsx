@@ -25,16 +25,15 @@ const EditUserPage = () => {
     handleUpdateUser(user._id, {
       ...normalizeUser({ ...value.data }),
       bizNumber: user.bizNumber,
-      user_id: user.user._id,
+      user_id: user._id,
     });
   });
 
   useEffect(() => {
     handleGetUser(userId).then((data) => {
-      console.log(data);
       if (user._id !== data._id) return navigate(ROUTES.CARDS);
-      const modeledCard = mapUserToModel(data);
-      rest.setData(modeledCard);
+      const modeledUser = mapUserToModel(data);
+      rest.setData(modeledUser);
     });
   }, []);
 
@@ -107,7 +106,6 @@ const EditUserPage = () => {
           onChange={rest.handleChange}
           data={value.data}
           sm={6}
-          disabled={true}
         />
         <Input
           name="imageUrl"
