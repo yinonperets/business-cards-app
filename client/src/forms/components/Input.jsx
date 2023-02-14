@@ -13,6 +13,7 @@ const Input = ({
   required,
   error,
   onChange,
+  disabled,
   ...rest
 }) => {
   return (
@@ -30,6 +31,7 @@ const Input = ({
         onChange={onChange}
         fullWidth
         autoComplete="off"
+        disabled={disabled}
       />
     </Grid>
   );
@@ -43,12 +45,14 @@ Input.propTypes = {
   onChange: func.isRequired,
   variant: string,
   data: object,
+  disable: bool.isRequired,
 };
 
 Input.defaultProps = {
   required: true,
   type: "text",
   variant: "outlined",
+  disabled: false,
 };
 
 export default React.memo(Input);

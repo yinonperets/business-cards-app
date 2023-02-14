@@ -1,15 +1,21 @@
 import { useCallback, useMemo, useState } from "react";
 import useAxios from "../../hooks/useAxios";
-import { createCard, login, signup } from "../services/userApiService";
+import {
+  editUser,
+  getUserFromServer,
+  login,
+  signup,
+} from "../services/userApiService";
 import {
   getUser,
   removeToken,
   setTokenInLocalStorage,
 } from "../services/localStorageService";
 import { useUser } from "../providers/UserProvider.jsx";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import ROUTES from "../../routes/routesModel";
 import normalizeUser from "../helpers/normalization/normalizeUser";
+import { useSnackbar } from "../../providers/SnackbarProvider";
 
 const useUsers = () => {
   const [users, setUsers] = useState(null);
@@ -18,6 +24,7 @@ const useUsers = () => {
 
   const navigate = useNavigate();
   const { user, setUser, setToken } = useUser();
+  const snack = useSnackbar();
   useAxios();
 
   const requestStatus = useCallback(
@@ -64,6 +71,30 @@ const useUsers = () => {
     [requestStatus, handleLogin]
   );
 
+  const handleUpdateUser = useCallback(async (userId, userFromClients) => {
+    try {
+      setLoading(true);
+      const user = await editUser(userId, userFromClients);
+      requestStatus(false, null, null, user);
+      snack("success", "user Updated");
+      Navigate(ROUTES.MY_CARDS);
+    } catch (error) {
+      requestStatus(false, error, null);
+    }
+  }, []);
+
+  const handleGetUser = useCallback(async (userId) => {
+    try {
+      setLoading(true);
+      const user = await getUserFromServer(userId);
+      requestStatus(false, null, null, user);
+      snack("success", "user imported from DB");
+      return user;
+    } catch (error) {
+      requestStatus(false, error, null);
+    }
+  }, []);
+
   const value = useMemo(
     () => ({ isPendingg, error, user, users }),
     [isPendingg, error, user, users]
@@ -74,6 +105,8 @@ const useUsers = () => {
     handleLogin,
     handleLogout,
     handleSignup,
+    handleUpdateUser,
+    handleGetUser,
   };
 };
 

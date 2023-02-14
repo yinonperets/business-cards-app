@@ -58,7 +58,7 @@ const MenuBar = ({ isMenuOpen, anchorEl, onCloseMenu }) => {
           <NavBarLink to={ROUTES.USER_PROFILE}>
             <MenuItem onClick={onCloseMenu}>Profile</MenuItem>
           </NavBarLink>
-          <NavBarLink to={ROUTES.EDIT_USER}>
+          <NavBarLink to={`${ROUTES.EDIT_USER}/${user._id}`}>
             <MenuItem onClick={onCloseMenu}>Edit account</MenuItem>
           </NavBarLink>
         </Box>

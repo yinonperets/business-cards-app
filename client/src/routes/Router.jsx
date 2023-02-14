@@ -24,6 +24,7 @@ import MyCardsPage from "../cards/pages/MyCardsPage";
 import EditCardPage from "../cards/pages/EditCardPage";
 import CreateCardPage from "../cards/pages/CreateCardPage";
 import FavCardPage from "../cards/pages/FavCardPage";
+import EditUserPage from "../users/pages/EditUserPage";
 
 const Router = () => {
   return (
@@ -37,6 +38,7 @@ const Router = () => {
         path={`${ROUTES.CARD_DETAILS}/:cardId`}
         element={<CardDetailsPage />}
       />
+      <Route path={`${ROUTES.EDIT_USER}/:userId`} element={<EditUserPage />} />
       <Route path={`${ROUTES.EDIT_CARD}/:cardId`} element={<EditCardPage />} />
       <Route path={ROUTES.FAV_CARDS} element={<FavCardPage />} />
       <Route path={ROUTES.MY_CARDS} element={<MyCardsPage />} />
