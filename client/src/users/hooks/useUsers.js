@@ -88,7 +88,6 @@ const useUsers = () => {
       setLoading(true);
       const user = await getUserFromServer(userId);
       requestStatus(false, null, null, user);
-      snack("success", "user imported from DB");
       return user;
     } catch (error) {
       requestStatus(false, error, null);

@@ -48,7 +48,7 @@ const useCards = () => {
       setPending(true);
       const card = await getCard(cardId);
       requestStatus(false, null, null, card);
-      // snack("success", "Card imported from DB");
+      return card;
     } catch (error) {
       requestStatus(false, error, null);
     }

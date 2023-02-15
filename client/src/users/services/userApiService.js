@@ -28,7 +28,6 @@ export const editUser = async (userId, normalaizedCard) => {
     );
     return data;
   } catch (error) {
-    console.log(error);
     return Promise.reject(error.message);
   }
 };
@@ -38,7 +37,6 @@ export const getUserFromServer = async (userId) => {
     const { data } = await axios.get(`${apiUrl}/users/${userId}`);
     return data;
   } catch (error) {
-    console.log(error);
     return Promise.reject(error.message);
   }
 };

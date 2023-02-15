@@ -11,8 +11,6 @@ import useUsers from "../../../../users/hooks/useUsers";
 const MenuBar = ({ isMenuOpen, anchorEl, onCloseMenu }) => {
   const { user } = useUser();
   const { handleLogout } = useUsers();
-  // const user = true
-  // const user = false
 
   return (
     <MuiMenu

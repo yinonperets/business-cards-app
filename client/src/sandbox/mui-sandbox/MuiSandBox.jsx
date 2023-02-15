@@ -1,14 +1,12 @@
-import React from 'react'
-import MuiDivider from './MuiDivider'
-// import TypographyComponent from './TypographyComponent'
+import React from "react";
+import MuiDivider from "./MuiDivider";
 
 function MuiSandBox() {
   return (
     <>
-    {/* <TypographyComponent/> */}
-    <MuiDivider/>
+      <MuiDivider />
     </>
-  )
+  );
 }
 
-export default MuiSandBox
+export default MuiSandBox;

@@ -7,7 +7,6 @@ export const getCards = async () => {
     const { data } = await axios.get(`${apiURL}/cards`);
     return data;
   } catch (error) {
-    console.log(error);
     return Promise.reject(error.message);
   }
 };
@@ -17,7 +16,6 @@ export const getCard = async (cardId) => {
     const { data } = await axios.get(`${apiURL}/cards/${cardId}`);
     return data;
   } catch (error) {
-    console.log(error);
     return Promise.reject(error.message);
   }
 };
@@ -28,7 +26,6 @@ export const getMyCards = async () => {
 
     return data;
   } catch (error) {
-    console.log(error);
     return Promise.reject(error.message);
   }
 };
@@ -50,7 +47,6 @@ export const editCard = async (cardId, normalaizedCard) => {
     );
     return data;
   } catch (error) {
-    console.log(error);
     return Promise.reject(error.message);
   }
 };
@@ -60,7 +56,6 @@ export const changeLikeStatus = async (cardId) => {
     const { data } = await axios.patch(`${apiURL}/cards/${cardId}`);
     return data;
   } catch (error) {
-    console.log(error);
     return Promise.reject(error.message);
   }
 };
@@ -70,7 +65,6 @@ export const deleteCard = async (cardId) => {
     const { data } = await axios.delete(`${apiURL}/cards/${cardId}`);
     return data;
   } catch (error) {
-    console.log(error);
     return Promise.reject(error.message);
   }
 };

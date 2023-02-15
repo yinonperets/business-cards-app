@@ -40,6 +40,7 @@ const Router = () => {
       />
       <Route path={`${ROUTES.EDIT_USER}/:userId`} element={<EditUserPage />} />
       <Route path={`${ROUTES.EDIT_CARD}/:cardId`} element={<EditCardPage />} />
+
       <Route path={ROUTES.FAV_CARDS} element={<FavCardPage />} />
       <Route path={ROUTES.MY_CARDS} element={<MyCardsPage />} />
       <Route path={ROUTES.LOGIN} element={<LoginPage />} />

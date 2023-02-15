@@ -1,24 +1,58 @@
-import React from 'react'
-import Container from '@mui/material/Container'
-import PageHeader from '../components/PageHeader'
-import { Grid } from '@mui/material'
+import React from "react";
+import Container from "@mui/material/Container";
+import PageHeader from "../components/PageHeader";
+import { Grid } from "@mui/material";
 
 const AboutPage = () => {
-    return (
-        <Container>
-            <PageHeader title='About Page' subtitle='On this page you can find explanations about using the application'/>
+  return (
+    <Container>
+      <PageHeader
+        title="About Page"
+        subtitle="On this page you can find explanations about using the application"
+      />
 
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={8} alignSelf='center'>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi id impedit veniam nobis. Maxime accusamus velit illo ipsam. Facere temporibus illo sed perspiciatis iusto? Laborum nihil, officia rerum itaque fuga laboriosam vitae minima esse ipsa nesciunt nobis eligendi natus corporis distinctio dignissimos. Quasi ad autem blanditiis quod nihil veniam vitae accusamus necessitatibus, aliquid praesentium ullam non. Deleniti, numquam atque officiis animi doloremque aliquid rerum nihil et at assumenda earum a voluptatum consequuntur dolore aliquam sed debitis itaque quidem iste beatae! Iste consequuntur, possimus cupiditate corporis vero molestiae, dolores facilis repudiandae doloribus qui nostrum obcaecati labore dolorum. Voluptates accusantium nulla quo vitae repudiandae placeat tempora non id eligendi. Ex aliquam labore, assumenda pariatur placeat rem perspiciatis provident quae doloribus, quidem rerum, amet similique fuga quia. Ullam, facilis officiis laboriosam nihil iusto ea magnam harum quas consequuntur illo vitae, quibusdam eos eum hic culpa suscipit, dolores tempore voluptates neque aliquid! Sapiente, perferendis rem? Ipsam magnam eaque impedit reprehenderit nemo animi fugiat! Dignissimos vitae porro, laboriosam error officiis iure odio tempora cum recusandae repellendus architecto ut mollitia omnis illo fugiat temporibus dolorum. Praesentium ratione molestiae iusto sequi unde qui necessitatibus corrupti harum, totam minus assumenda dignissimos nemo perferendis delectus amet quo omnis tempora natus velit. Neque, commodi sed beatae est fugiat dignissimos quas nam hic aperiam cumque, asperiores impedit, magni repudiandae doloribus eius magnam. Explicabo repellendus fugiat necessitatibus, odit beatae eos modi est dolore possimus harum quidem ea pariatur delectus quas nesciunt fuga dignissimos nisi dolores ullam earum doloribus? Temporibus sed deleniti fuga.
-                </Grid>
-                <Grid item xs={12} md={4} sx={{ display: { md: 'flex', xs: 'none' }, justifyContent: 'center' } }>
-                    {/* <img style={{ maxWidth: '100%' }} src="/assets/images/card.jpg" alt="Cards" /> */}
-                    <img src="/assets/images/card.jpg" alt="Cards" width='100%' />
-                </Grid>
-            </Grid>
-        </Container>
-    )
-}
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={8} alignSelf="center">
+          Welcome to our business card app! Our mission is to provide a simple
+          and efficient way for individuals and businesses to create, manage,
+          and exchange their professional contact information.
+          <br />
+          Our app makes it easy for you to create custom business cards that
+          showcase your unique style and brand. You can choose from a wide range
+          of design templates, add your own logo, text, and photos, and preview
+          your card in real-time.
+          <br />
+          With our app, you can also manage multiple business cards for
+          different purposes, and share your card with others via email, text,
+          or social media. Your contacts will receive a digital version of your
+          card that they can save directly to their phone or add to their
+          contacts.
+          <br />
+          We are committed to providing a seamless user experience, and are
+          constantly working to improve our app and add new features based on
+          your feedback. If you have any questions or suggestions, please don't
+          hesitate to contact us.
+          <br />
+          Thank you for choosing our business card app, and we look forward to
+          helping you make a great impression!
+          <br />
+          Local search for finding points of interest, businesses, events and a
+          huge variety of search fields. The data is collected from all over the
+          network and from bcard users on a daily basis, automatically. The
+          website's algorithm and the information in it are regularly updated.
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={4}
+          sx={{ display: { md: "flex", xs: "none" }, justifyContent: "center" }}
+        >
+          {/* <img style={{ maxWidth: '100%' }} src="/assets/images/card.jpg" alt="Cards" /> */}
+          <img src="/assets/images/card.jpg" alt="Cards" width="100%" />
+        </Grid>
+      </Grid>
+    </Container>
+  );
+};
 
-export default AboutPage
+export default AboutPage;
